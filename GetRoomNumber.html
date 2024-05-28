@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Room Number</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Get Room Number</h1>
+    <form id="getRoomNumberForm" action="getRoomNumber.jsp" method="post">
+        <label for="reservationId">Reservation ID:</label>
+        <input type="text" id="reservationId" name="reservationId" required>
+        <br>
+        <button type="submit">Get Room Number</button>
+    </form>
+  
+    <script >
+        document.getElementById('getRoomNumberForm').addEventListener('submit', function(event) {
+    const reservationId = document.getElementById('reservationId').value;
+
+    if (isNaN(reservationId)) {
+        alert('Reservation ID must be numeric.');
+        event.preventDefault();
+    }
+});
+
+    </script>
+</body>
+</html>
